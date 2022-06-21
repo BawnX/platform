@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.1](https://github.com/BawnX/platform/compare/v0.1.0...v0.1.1) (2022-06-21)
+
+
+### Bug Fixes
+
+* update packages ([59f57a9](https://github.com/BawnX/platform/commit/59f57a9e28bee92dff61560a8be5ad966709cf8b))
+
 ## 0.1.0 (2022-06-21)
 
 
