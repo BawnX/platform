@@ -1,78 +1,78 @@
 const toString = Object.prototype.toString
 
-export function is(val, type) {
+export function is(val: any, type: any) {
   return toString.call(val) === `[object ${type}]`
 }
 
-export function isDef(val) {
+export function isDef(val: any) {
   return typeof val !== 'undefined'
 }
 
-export function isUndef(val) {
+export function isUndef(val: any) {
   return typeof val === 'undefined'
 }
 
-export function isNull(val) {
+export function isNull(val: any) {
   return val === null
 }
 
-export function isWhitespace(val) {
+export function isWhitespace(val: any) {
   return val === ''
 }
 
-export function isObject(val) {
+export function isObject(val: any) {
   return !isNull(val) && is(val, 'Object')
 }
 
-export function isArray(val) {
+export function isArray(val: any) {
   return val && Array.isArray(val)
 }
 
-export function isString(val) {
+export function isString(val: any) {
   return is(val, 'String')
 }
 
-export function isNumber(val) {
+export function isNumber(val: any) {
   return is(val, 'Number')
 }
 
-export function isBoolean(val) {
+export function isBoolean(val: any) {
   return is(val, 'Boolean')
 }
 
-export function isDate(val) {
+export function isDate(val: any) {
   return is(val, 'Date')
 }
 
-export function isRegExp(val) {
+export function isRegExp(val: any) {
   return is(val, 'RegExp')
 }
 
-export function isFunction(val) {
+export function isFunction(val: any) {
   return typeof val === 'function'
 }
 
-export function isPromise(val) {
+export function isPromise(val: any) {
   return is(val, 'Promise') && isObject(val) && isFunction(val.then) && isFunction(val.catch)
 }
 
-export function isElement(val) {
+export function isElement(val: any) {
   return isObject(val) && !!val.tagName
 }
 
-export function isWindow(val) {
+export function isWindow(val: any) {
   return typeof window !== 'undefined' && isDef(window) && is(val, 'Window')
 }
 
-export function isNullOrUndef(val) {
+export function isNullOrUndef(val: any) {
   return isNull(val) || isUndef(val)
 }
 
-export function isNullOrWhitespace(val) {
+export function isNullOrWhitespace(val: any) {
   return isNullOrUndef(val) || isWhitespace(val)
 }
 
-export function isEmpty(val) {
+export function isEmpty(val: any) {
   if (isArray(val) || isString(val)) {
     return val.length === 0
   }
@@ -95,7 +95,7 @@ export function isEmpty(val) {
  * @param {Number|Boolean|String} def
  * @returns
  */
-export function ifNull(val, def = '') {
+export function ifNull(val: any, def = '') {
   return isNullOrWhitespace(val) ? def : val
 }
 
@@ -109,7 +109,7 @@ export function ifNull(val, def = '') {
  * @param {string} path
  * @returns {Boolean}
  */
-export function isExternal(path) {
+export function isExternal(path: any) {
   return /^(https?:|mailto:|tel:)/.test(path)
 }
 
